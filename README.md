@@ -1,6 +1,6 @@
 # Neural Network
 Neural network which approximate sqtr(x) function. Can be easly adapted to approximate any function.
-To run programm you have to pass arguments:
+To run program you have to pass arguments:
 * number of inputs,
 * number of hidden layers,
 * number of neurons in hidden layer,
