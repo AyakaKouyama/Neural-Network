@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Layer{
-    List<Neuron> neurons;
+    private List<Neuron> neurons;
 
     public Layer(){
         neurons = new ArrayList<>();

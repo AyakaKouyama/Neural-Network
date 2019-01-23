@@ -10,10 +10,10 @@ public class Neuron {
     private double output;
     private List<Connection> connections;
     private HashMap<Integer, Connection> connectionHashMap;
-    final public int id;
-    static int counter = 0;
     private Type type;
 
+    final public int id;
+    private static int counter = 0;
 
     public Neuron(Type type) {
         connections = new ArrayList<>();
@@ -34,12 +34,13 @@ public class Neuron {
             sum += weight * neuronOutput;
         }
 
-        if(biasConnection != null)
+        if(biasConnection != null) {
             sum += biasConnection.getWeight();
+        }
 
         output = Functions.sigmoid(sum);
 
-        if(type == type.Output)
+       if(type == type.Output)
             output = sum;
     }
 
@@ -51,7 +52,7 @@ public class Neuron {
         output = value;
     }
 
-    public void addConection(Layer layer) {
+    public void addConnection(Layer layer) {
         for (var neuron : layer.getNeurons()) {
             Connection connection = new Connection(neuron, this);
             connections.add(connection);
@@ -69,7 +70,7 @@ public class Neuron {
 
     public void addBiasConnection(Neuron neuron){
         Connection biasConnection = new Connection(neuron, this);
-        biasConnection = biasConnection;
+        this.biasConnection = biasConnection;
         connections.add(biasConnection);
     }
 

@@ -4,7 +4,6 @@ public class Connection {
 
     private double weight;
     private double delta;
-    private double prevDelta;
     private Neuron leftNeuron;
     private Neuron rightNeuron;
 
@@ -27,14 +26,6 @@ public class Connection {
 
     public double getDelta(){
         return delta;
-    }
-
-    public void setPrevDelta(double value){
-        prevDelta = value;
-    }
-
-    public double getPrevDelta(){
-        return prevDelta;
     }
 
     public Neuron getLeftNeuron(){
